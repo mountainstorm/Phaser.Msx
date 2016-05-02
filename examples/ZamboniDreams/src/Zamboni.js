@@ -122,14 +122,14 @@ Zamboni.prototype.update = function () {
 
 Zamboni.prototype.locationUpdate = function () {
     // forward/backward/acceleration etc
-    var elapsed = PHASER.time.elapsedMS / 1000
-    //var elapsed = PHASER.time.physicsElapsed
-    if (PHASER.input.keyboard.isDown(Phaser.Keyboard.UP) || this.game.touchControl.cursors.up) {
+    var elapsed = this.game.time.elapsedMS / 1000
+    //var elapsed = this.game.time.physicsElapsed
+    if (this.game.input.keyboard.isDown(Phaser.Keyboard.UP) || this.game.touchControl.cursors.up) {
         this.speed += Zamboni.ACCELERATION_FORWARD * elapsed
         if (this.speed > Zamboni.MAX_FORWARD_SPEED) {
             this.speed = Zamboni.MAX_FORWARD_SPEED
         }
-    } else if (PHASER.input.keyboard.isDown(Phaser.Keyboard.DOWN) || this.game.touchControl.cursors.down) {
+    } else if (this.game.input.keyboard.isDown(Phaser.Keyboard.DOWN) || this.game.touchControl.cursors.down) {
         this.speed -= Zamboni.ACCELERATION_REVERSE * elapsed
         if (this.speed > 0.0) {
             this.speed -= Zamboni.DECELERATION * elapsed
@@ -153,14 +153,14 @@ Zamboni.prototype.locationUpdate = function () {
     }
 
     // turning left/right
-    console.log(this.game.touchControl.deltaX)
+    // console.log(this.game.touchControl.deltaX)
     var turning = false;
     if (this.speed != 0.0) {
-        if (PHASER.input.keyboard.isDown(Phaser.Keyboard.LEFT) || this.game.touchControl.deltaX < -50) {
+        if (this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT) || this.game.touchControl.deltaX < -50) {
             this.direction += Zamboni.ROTATION_PER_SECOND * elapsed
             turning = true
         } else {
-            if (PHASER.input.keyboard.isDown(Phaser.Keyboard.RIGHT) || this.game.touchControl.deltaX > 50) {
+            if (this.game.input.keyboard.isDown(Phaser.Keyboard.RIGHT) || this.game.touchControl.deltaX > 50) {
                 this.direction -= Zamboni.ROTATION_PER_SECOND * elapsed
                 turning = true             
             }

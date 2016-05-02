@@ -31,7 +31,7 @@ Options.prototype.constructor = Options
 
 
 Options.prototype.create = function () {
-    this.flashingControl = new Phaser.Msx.Button(PHASER, 0, 0, true, this.flashingChanged, this)
+    this.flashingControl = new Phaser.Msx.Button(this.game, 0, 0, true, this.flashingChanged, this)
     this.flashingControl.setState(this.game.settings.load('flashing'))
 
     this.controls.push({ spacing: 1 })

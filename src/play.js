@@ -64,7 +64,7 @@ Phaser.Msx.Play.prototype.constructor = Phaser.Msx.Play
 Phaser.Msx.Play.prototype.init = function () {
     this.game.stage.backgroundColor = Phaser.Msx.BACKGROUND
     if (this.game.state.getCurrentState() === this) {
-        var esc = PHASER.input.keyboard.addKey(Phaser.Keyboard.ESC)
+        var esc = this.game.input.keyboard.addKey(Phaser.Keyboard.ESC)
         esc.onDown.add(function () {
             // toggle pause state
             if (this.game.paused == true) {
@@ -82,9 +82,9 @@ Phaser.Msx.Play.prototype.paused = function () {
         // show paused dialog
         this.pauseOverlayUI = this.game.add.group()
 
-        var bmp = PHASER.make.bitmapData(PHASER.world.width, PHASER.world.height)
+        var bmp = this.game.make.bitmapData(this.game.world.width, this.game.world.height)
         bmp.fill(0, 0, 0, 0.5)
-        this.pauseOverlayUI.add(PHASER.add.image(0, 0, bmp))
+        this.pauseOverlayUI.add(this.game.add.image(0, 0, bmp))
 
         var y = 0
         var options = this.game.add.group()

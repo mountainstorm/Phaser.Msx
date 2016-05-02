@@ -116,7 +116,7 @@ Phaser.Msx.HighScores.prototype.getName = function (text, i) {
         this._entry = 'keyboard'
         this._characterIndex = 0
         this.game.time.events.loop(100, this.rotateCharacter, this)
-        PHASER.input.keyboard.addCallbacks(this, null, null, function (ch) {
+        this.game.input.keyboard.addCallbacks(this, null, null, function (ch) {
             if (this._entry == 'keyboard') {
                 if (ch.charCodeAt() != Phaser.KeyCode.ENTER &&
                     ch.charCodeAt() != Phaser.KeyCode.NUMPAD_ENTER) {

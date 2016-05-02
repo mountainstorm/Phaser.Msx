@@ -40,9 +40,9 @@ Phaser.Msx.Options.prototype.init = function (returnTo) {
     this.returnTo = returnTo
 
     // default controls
-    this.musicControl = new Phaser.Msx.Slider(PHASER, 0, 0, this.musicVolumeChanged, this)
+    this.musicControl = new Phaser.Msx.Slider(this.game, 0, 0, this.musicVolumeChanged, this)
     this.musicControl.setValue(this.game.settings.load('musicVolume'))
-    this.soundControl = new Phaser.Msx.Slider(PHASER, 0, 0, this.soundVolumeChanged, this)
+    this.soundControl = new Phaser.Msx.Slider(this.game, 0, 0, this.soundVolumeChanged, this)
     this.soundControl.setValue(this.game.settings.load('soundVolume'))
     this.controls = [
         { title: 'Music', control: this.musicControl },
