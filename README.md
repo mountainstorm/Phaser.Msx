@@ -8,6 +8,18 @@ In the examples directory are a few different games I've made for different reas
 All fonts are based on Google Webfonts and you can customize the display styles of all the classes by overriding the defaults e.g. Phaser.Msx.H1 (all in utils.js)
 
 
+## Branches ##
+
+The main branch is the `gh_pages` branch; this allows the demos to be served by github and everything to work
+
+
+## Examples ##
+
+* http://mountainstorm.github.io/Phaser.Msx/examples/ZamboniDreams/
+* http://mountainstorm.github.io/Phaser.Msx/examples/Helium-4/
+
+
+
 ## Classes ##
 
 ### Phaser.Msx.Toolbar ###
