@@ -83,7 +83,7 @@ Phaser.Msx.Play.prototype.paused = function () {
         this.pauseOverlayUI = this.game.add.group()
 
         var bmp = PHASER.make.bitmapData(PHASER.world.width, PHASER.world.height)
-        bmp.fill(0, 0, 0, 0.3)
+        bmp.fill(0, 0, 0, 0.5)
         this.pauseOverlayUI.add(PHASER.add.image(0, 0, bmp))
 
         var y = 0
